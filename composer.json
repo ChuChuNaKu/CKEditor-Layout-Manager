@@ -1,0 +1,50 @@
+{
+  "name": "chuchunaku/ckeditor_layout_manager",
+  "type": "drupal-module",
+  "description": "Provides custom Ckeditor layout options",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "extra": {
+    "installer-paths": {
+      "../../../libraries/{$name}": [
+        "type:drupal-library"
+      ]
+    }
+  },
+  "require": {
+    "composer/installers": "^1.0.20",
+    "chuchunaku/ckeditor-layoutmanager": "dev-master"
+  },
+  "require-dev": {
+    "chuchunaku/ckeditor-basewidget": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url":  "https://packages.drupal.org/8"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "radpet/ckeditor-layoutmanager",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/radpet/ckeditor-layoutmanager.git",
+          "type": "git",
+          "reference": "749256a32e87d9128b851415da70f0c6e783237d"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ckeditor/basewidget",
+        "version": "1.0.0 ",
+        "dist": {
+          "url": "http://download.ckeditor.com/basewidget/releases/basewidget_1.0.0.zip",
+          "type": "zip"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the Custom Layouts module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function ckeditor_layout_manager_requirements($phase) {
+  $requirements = [];
+
+  if ($phase == 'install') {
+    /** @var \Drupal\Core\File\FileSystem $filesystem */
+    $filesystem = \Drupal::service('file_system');
+    $plugins = [
+      'basewidget' => t('CKEditor Basewidget'),
+      'layoutmanager' => t('CKEditor Layout Manager'),
+    ];
+    foreach ($plugins as $plugin_id => $label) {
+      $plugin_dir = "libraries/ckeditor-{$plugin_id}";
+      if (!$filesystem->realpath("{$plugin_dir}/plugin.js")) {
+        $requirements["{$plugin_id}_ckeditor_plugin"] = [
+          'description' => t('CKEditor Layout Manager expects the <a href=":url">@label</a> plugin at <code>@path</code>. See the README for installation instructions.', [
+            ':url' => "http://ckeditor.com/addon/{$plugin_id}",
+            '@label' => $label,
+            '@path' => $filesystem->realpath('') . "/{$plugin_dir}",
+          ]),
+          'severity' => REQUIREMENT_ERROR,
+        ];
+      }
+    }
+  }
+
+  return $requirements;
+}
