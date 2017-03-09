@@ -1,0 +1,49 @@
+{
+  "name": "drupal/ckeditor_layout_manager",
+  "description": "Provides custom Ckeditor layout options",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type": "composer",
+      "url":  "https://packages.drupal.org/8"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "drupal-libraries/ckeditor-layoutmanager",
+        "version": "1.1.0",
+        "type": "drupal-library",
+        "dist": {
+          "url": "http://download.ckeditor.com/layoutmanager/releases/layoutmanager_1.1.0.zip",
+          "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "drupal-libraries/ckeditor-basewidget",
+        "version": "1.0.0",
+        "type": "drupal-library",
+        "dist": {
+          "url": "http://download.ckeditor.com/basewidget/releases/basewidget_1.0.0.zip",
+          "type": "zip"
+        }
+      }
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "../../../libraries/{$name}": [
+        "type:drupal-library"
+      ]
+    }
+  },
+  "require": {
+    "composer/installers": "^1.0.20",
+    "drupal-libraries/ckeditor-layoutmanager": "^1.1",
+    "drupal-libraries/ckeditor-basewidget": "^1.0"
+  }
+}

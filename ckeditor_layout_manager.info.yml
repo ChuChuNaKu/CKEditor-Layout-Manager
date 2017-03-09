@@ -1,0 +1,5 @@
+name: 'CKEditor Layout Manager'
+type: module
+core: 8.x
+package: wysiwyg
+description: 'Provides custom Ckeditor layout options.'

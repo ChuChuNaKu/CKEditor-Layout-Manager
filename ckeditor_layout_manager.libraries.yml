@@ -1,0 +1,16 @@
+ckeditor.layoutmanager:
+  version: VERSION
+  css:
+    theme:
+      /libraries/ckeditor-layoutmanager/css/style.css: {}
+      css/custom_layouts.css: {}
+  js:
+    /libraries/ckeditor-layoutmanager/plugin.js: {}
+    /libraries/ckeditor-layoutmanager/lang/en.js: {}
+  dependencies:
+    - ckeditor_layout_manager/ckeditor.basewidget
+
+ckeditor.basewidget:
+  version: VERSION
+  js:
+    /libraries/ckeditor-basewidget/plugin.js: {}
